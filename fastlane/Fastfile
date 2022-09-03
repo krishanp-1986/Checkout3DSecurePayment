@@ -24,11 +24,11 @@ private_lane :prepare do |options|
     }.freeze
     options = defaults.merge(options)
 
+     # Update/Install Pods
+     pods_update
+
     #run_swiftlint
     run_swiftlint
-
-    # Update/Install Pods
-     pods_update
 end
 
 private_lane :pods_update do
