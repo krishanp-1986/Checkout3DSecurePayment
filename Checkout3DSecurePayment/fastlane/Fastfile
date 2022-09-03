@@ -23,7 +23,7 @@ private_lane :prepare do |options|
     }.freeze
     options = defaults.merge(options)
 
-    update_fastlane
+    #update_fastlane
 
     # Update/Install Pods
      pods_update
