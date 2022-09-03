@@ -21,6 +21,7 @@ private_lane :run_all_tests do |options|
     workspace: WORKSPACE,
     scheme: APP_SCHEME,
     code_coverage: true,
+    devices: TEST_DEVICES,
     derived_data_path: DERIVED_DATA_PATH,
     output_directory: REPORTS_FOLDER,
     skip_build: true
