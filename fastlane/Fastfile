@@ -4,6 +4,7 @@ DERIVED_DATA_PATH = PROJECT_PARAMS[:DERIVED_DATA_PATH]
 
 
 import('Test')
+import('SwiftLint')
 
 default_platform(:ios)
 
@@ -23,7 +24,8 @@ private_lane :prepare do |options|
     }.freeze
     options = defaults.merge(options)
 
-    #update_fastlane
+    #run_swiftlint
+    run_swiftlint
 
     # Update/Install Pods
      pods_update
