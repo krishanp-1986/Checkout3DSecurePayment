@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Checkout3DSecurePayment
+
+  Created by krishan on 2022-09-04.
+  
+*/
+
+"credit_card_number" = "Card Number";
+"credit_card_number_placeholder" = "Please enter valid card number";
+"expiry_date" = "Expiry date";
+"expiry_date_placeholder" = "yyyy/mm";
+"cvv" = "CVV";
+"cvv_placeholder" = "•••";
+"pay" = "Pay";
+"accepted_cards" = "Accepted cards";
