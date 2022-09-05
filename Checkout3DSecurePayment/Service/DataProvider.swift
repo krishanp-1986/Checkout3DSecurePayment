@@ -32,3 +32,9 @@ extension ServiceError: LocalizedError {
     }
   }
 }
+
+extension ServiceError: Equatable {
+  static func == (lhs: ServiceError, rhs: ServiceError) -> Bool {
+    (lhs as NSError).code == (rhs as NSError).code
+  }
+}

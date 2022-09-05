@@ -9,10 +9,10 @@ import Foundation
 
 extension URLRequest {
   mutating func jsonHeader() {
-      self.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    self.setValue("application/json", forHTTPHeaderField: "Content-Type")
   }
   
   mutating func requestBody<T>(_ input: T) where T: Encodable {
-      self.httpBody = try? JSONEncoder().encode(input)
+    self.httpBody = try? JSONEncoder().encode(input)
   }
 }

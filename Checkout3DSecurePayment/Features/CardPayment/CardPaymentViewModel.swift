@@ -9,7 +9,7 @@ import Foundation
 
 protocol CardPaymentViewModelProtocol {
   init(with useCase: CardPaymentUseCase)
-  var navigateToWebView: ((String) -> Void)? { get }
+  var navigateToWebView: ((String) -> Void)? { get set }
   var updateViewBasedOn: ((CardPaymentViewModel.State) -> Void)? { get set }
   func fetchFormModels() -> [InputViewDataProvidable]
   func submitPayment(_ details: [String: Any])
