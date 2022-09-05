@@ -3,6 +3,7 @@
 [![develop](https://github.com/krishanp-1986/Checkout3DSecurePayment/actions/workflows/develop.yml/badge.svg)](https://github.com/krishanp-1986/Checkout3DSecurePayment/actions/workflows/develop.yml)
 
 This project is the outcome of Checkout.com developer Test. Tasks is to implement a mobile app that does 3D Secure payments.
+
 <br>
 <br>
 <p align="center">
@@ -19,6 +20,7 @@ Since this app is medium size, i have decided to implement using **MVVM**, and *
 Light version of Mobile Design System is used to showcase the knowledge in creating Design system.
 
 Also CI/CD pipeline is setup with the help of github Actions and fastlane to demonstrate the experience in setting up CI/CD pipelines.
+
 <br>
 <br>
 <img src = "README Files/actions.png">
