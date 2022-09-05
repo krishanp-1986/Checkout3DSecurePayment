@@ -12,4 +12,13 @@ class ExpiryViewModel: InputViewModel {
     super.init(key: key, placeHolder: placeHolder, formatter: formatter, validator: validator)
     self.maxCharacterCount = 7
   }
+  
+  override func getValue() -> [String: Any?] {
+    let year = self.value?.prefix(4)
+    let month = self.value?.suffix(2)
+    return [
+      Constants.ApiKeys.expiryYear: Int(String(year ?? "")),
+      Constants.ApiKeys.expiryMonth: Int(String(month ?? ""))
+    ]
+  }
 }

@@ -15,7 +15,7 @@ protocol InputViewDataProvidable {
   var maxCharacterCount: Int? { get set }
   func isValid() -> (isValid: Bool, errorMessage: String?)
   func setValue(value: String?)
-  func getValue() -> [String: String?]
+  func getValue() -> [String: Any?]
 }
 
 class InputViewModel: InputViewDataProvidable {
@@ -46,7 +46,7 @@ class InputViewModel: InputViewDataProvidable {
     self.value = value
   }
   
-  func getValue() -> [String: String?] {
+  func getValue() -> [String: Any?] {
     [key: value]
   }
 }

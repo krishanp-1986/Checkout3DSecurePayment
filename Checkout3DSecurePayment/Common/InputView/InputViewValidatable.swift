@@ -12,7 +12,7 @@ import SnapKit
 protocol InputViewValidatable: UIView {
   var viewModel: InputViewDataProvidable { get }
   func isValid() -> Bool
-  func getValue() -> [String: String?]
+  func getValue() -> [String: Any?]
   func setToNormalState()
   func setToErrorState(_ errorMessage: String)
   func setToErrorState()
@@ -102,7 +102,7 @@ extension InputView: InputViewValidatable {
     self.viewModel.isValid().isValid
   }
   
-  func getValue() -> [String: String?] {
+  func getValue() -> [String: Any?] {
     self.viewModel.getValue()
   }
   
