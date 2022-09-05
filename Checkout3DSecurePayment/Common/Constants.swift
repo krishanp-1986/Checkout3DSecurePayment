@@ -9,10 +9,20 @@ import Foundation
 
 struct Constants {
   struct ApiKeys {
-    static let creditCardNumber = "credit_card_number"
+    static let creditCardNumber = "number"
     static let expiryDate = "expiry_date"
+    static let expiryYear = "expiry_year"
+    static let expiryMonth = "expiry_month"
     static let cvv = "cvv"
     static let pay = "pay"
+  }
+  
+  static let successUrl = "https://success.com"
+  static let failureUrl = "https://fail.com"
+  
+  struct NSErrorConstants {
+    static let nsErrorDomain = "com.checkout.3dpayment"
+    static let failedRequestErrorCode = -999
   }
 }
 

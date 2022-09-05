@@ -49,8 +49,11 @@ final class ExpiryCVVView: UIView, InputViewValidatable {
     expiryDateInputView.isValid() && cvvInputField.isValid()
   }
   
-  func getValue() -> [String: String?] {
-    self.viewModel.getValue()
+  func getValue() -> [String: Any?] {
+    let expiryValues = self.expiryDateInputView.getValue().merging(self.cvvInputField.getValue()) {_, cvvkey in
+      cvvkey
+    }
+    return expiryValues
   }
   
   

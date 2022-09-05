@@ -6,7 +6,7 @@
   
 */
 
-"credit_card_number" = "Card Number";
+"number" = "Card Number";
 "credit_card_number_placeholder" = "Please enter valid card number";
 "expiry_date" = "Expiry date";
 "expiry_date_placeholder" = "yyyy/mm";
@@ -21,3 +21,5 @@
 "old_expiry_date_format" = "Please double-check the expiry date and try again.";
 "empty_cvv_error" = "Please enter the CVV";
 "invalid_cvv_length_error" = "Please double-check the CVV and try again";
+"payment_success" = "Payment Completed :)";
+"payment_failed" = "Payment Failed :(";

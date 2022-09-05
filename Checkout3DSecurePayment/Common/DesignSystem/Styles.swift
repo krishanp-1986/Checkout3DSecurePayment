@@ -28,5 +28,11 @@ public extension DesignSystem {
       label.numberOfLines = 0
       label.textColor = DesignSystem.shared.colors.textDefault
     }
+    
+    public lazy var titleLabel: Style<UILabel> = { label in
+      label.numberOfLines = 0
+      label.textColor = DesignSystem.shared.colors.textDefault
+      label.font = DesignSystem.shared.fonts.headerTitle
+    }
   }
 }

@@ -11,8 +11,16 @@ class CardPaymentViewController: BaseViewController<CardPaymentViewModelProtocol
   private lazy var formInputViews: [InputViewValidatable] = []
   
   override func bind() {
-    self.viewModel.cardTypeDetectedListener = { [unowned self] type in
-      self.acceptedCardsView.selectedCardType = type
+    self.viewModel.updateViewBasedOn = { [unowned self] state in
+      switch state {
+      case .cardDetected(let cardType):
+        self.acceptedCardsView.selectedCardType = cardType
+      case .redirected:
+        self.submitButton.stopLoading()
+      case .error(let error):
+        self.submitButton.stopLoading()
+        self.displayBasicAlert(for: error)
+      }
     }
     formInputViews = self.viewModel.fetchFormModels().map(transformToView(_:))
     buildUI(with: formInputViews)
@@ -57,7 +65,7 @@ class CardPaymentViewController: BaseViewController<CardPaymentViewModelProtocol
     let view = AcceptedCardsView(with: CreditCardType.allCases)
     return view
   }()
-    
+  
   private lazy var submitButton: Button = {
     let button = Button()
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -77,6 +85,8 @@ class CardPaymentViewController: BaseViewController<CardPaymentViewModelProtocol
     }
     
     guard isValidForm else { return }
-    self.viewModel.submitPayment()
+    let values = self.formInputViews.map({ $0.getValue() }).merged()
+    self.submitButton.startLoading()
+    self.viewModel.submitPayment(values)
   }
 }
