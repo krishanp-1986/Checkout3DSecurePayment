@@ -13,17 +13,22 @@ protocol InputViewValidatable: UIView {
   var viewModel: InputViewDataProvidable { get }
   func isValid() -> Bool
   func getValue() -> [String: String?]
+  func setToNormalState()
+  func setToErrorState(_ errorMessage: String)
+  func setToErrorState()
 }
 
 
 open class InputView: UIView {
   let viewModel: InputViewDataProvidable
   
-  init(with viewModel: InputViewDataProvidable, keyBoardType: UIKeyboardType = .numberPad) {
+  init(with viewModel: InputViewDataProvidable, keyBoardType: UIKeyboardType = .numberPad, isSecuredEntry: Bool = false) {
     self.viewModel = viewModel
     super.init(frame: .zero)
     self.buildUI()
     self.bindUI(keyBoardType)
+    self.translatesAutoresizingMaskIntoConstraints = false
+    self.inputField.isSecureTextEntry = isSecuredEntry
   }
   
   required public init?(coder: NSCoder) {
@@ -72,7 +77,13 @@ open class InputView: UIView {
   }()
   
   @objc func textFieldChanged(_ sender: UITextField) {
-    self.viewModel.setValue(sender.text)
+    if let formatter = self.viewModel.formatter,
+    let text = self.inputField.text {
+      self.viewModel.setValue(value: formatter.formatString(text, reverse: true))
+      self.inputField.text = formatter.formatString(text, reverse: false)
+    } else {
+      self.viewModel.setValue(value: sender.text)
+    }
   }
   
   private lazy var errorLabel: UILabel = {
@@ -88,22 +99,47 @@ open class InputView: UIView {
 
 extension InputView: InputViewValidatable {
   func isValid() -> Bool {
-    self.viewModel.isValid()
+    self.viewModel.isValid().isValid
   }
   
   func getValue() -> [String: String?] {
     self.viewModel.getValue()
   }
+  
+  func setToNormalState() {
+    self.inputField.setToNormalState()
+    self.errorLabel.isHidden = true
+  }
+  
+  func setToErrorState(_ errorMessage: String) {
+    self.inputField.setToErrorState()
+    self.errorLabel.isHidden = false
+    self.errorLabel.text = errorMessage
+  }
+  
+  func setToErrorState() {
+    let validationResult = self.viewModel.isValid()
+    setToErrorState(validationResult.errorMessage ?? "")
+  }
 }
 
 extension InputView: UITextFieldDelegate {
   public func textFieldDidBeginEditing(_ textField: UITextField) {
-    self.inputField.setToNormalState()
+    self.setToNormalState()
   }
   
   public func textFieldDidEndEditing(_ textField: UITextField) {
-    if !self.viewModel.isValid() {
-      self.inputField.setToErrorState()
+    let validationResult = self.viewModel.isValid()
+    if !validationResult.isValid {
+      self.setToErrorState(validationResult.errorMessage ?? "")
     }
+  }
+  
+  public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let currentText = textField.text ?? ""
+    guard let count = self.viewModel.maxCharacterCount  else { return true }
+    guard let stringRange = Range(range, in: currentText) else { return false }
+    let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+    return updatedText.count <= count
   }
 }

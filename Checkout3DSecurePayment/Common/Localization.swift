@@ -23,6 +23,13 @@ struct Localization {
   let cvvPlaceholder = Localization.loaclize("cvv_placeholder")
   let pay = Localization.loaclize("pay")
   let acceptedCards = Localization.loaclize("accepted_cards")
+  let emptyCreditCardNumberError = Localization.loaclize("empty_credit_card_number")
+  let invalidCreditCardNumberError = Localization.loaclize("invalid_credit_card_number")
+  let emptyExpiryDateError = Localization.loaclize("empty_expiry_date_error")
+  let invalidExpiryDateFormatError = Localization.loaclize("invalid_expiry_date_format")
+  let pastExpiryDateFormatError = Localization.loaclize("old_expiry_date_format")
+  let emptyCvvError = Localization.loaclize("empty_cvv_error")
+  let invalidCVVLengthError = Localization.loaclize("invalid_cvv_length_error")
   
   private static func loaclize(_ key: String) -> String {
     NSLocalizedString(key, comment: "")

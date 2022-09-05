@@ -10,26 +10,39 @@ import Foundation
 protocol InputViewDataProvidable {
   var key: String { get }
   var placeHolder: String { get }
-  func isValid() -> Bool
-  func setValue(_ value: String?)
+  var formatter: Formattable? { get set }
+  var validator: Validator? { get set }
+  var maxCharacterCount: Int? { get set }
+  func isValid() -> (isValid: Bool, errorMessage: String?)
+  func setValue(value: String?)
   func getValue() -> [String: String?]
 }
 
 class InputViewModel: InputViewDataProvidable {
+  var maxCharacterCount: Int?
+  var validator: Validator?
+  var formatter: Formattable?
   let key: String
   let placeHolder: String
-  private var value: String?
+  private(set) var value: String?
   
-  init(key: String = "", placeHolder: String = "") {
+  init(
+    key: String = "",
+    placeHolder: String = "",
+    formatter: Formattable? = nil,
+    validator: Validator? = nil
+  ) {
     self.key = key
     self.placeHolder = placeHolder
+    self.formatter = formatter
+    self.validator = validator
   }
   
-  func isValid() -> Bool {
-    !(self.value?.isEmpty ?? true)
+  func isValid() -> (isValid: Bool, errorMessage: String?) {
+    self.validator?.isValid(self.value) ?? (isValid: true, errorMessage: nil)
   }
   
-  func setValue(_ value: String?) {
+  func setValue(value: String?) {
     self.value = value
   }
   

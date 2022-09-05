@@ -24,7 +24,7 @@ final class AcceptedCardsView: UIView {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   private func buildUI() {
     self.addSubview(headerLabel)
     self.addSubview(cardTypesImageContainer)

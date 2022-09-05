@@ -54,6 +54,24 @@ public enum CreditCardType: String, CaseIterable {
     }
   }
   
+  var spacing: [Int] {
+    switch self {
+    case .amex, .dinersClub:
+      return [4, 10]
+    default:
+      return [4, 8, 12]
+    }
+  }
+  
+  var cvvLength: Int {
+    switch self {
+    case .amex:
+      return 4
+    default:
+      return 3
+    }
+  }
+  
   var cardImageName: String {
     "icon-\(self.rawValue.lowercased())"
   }

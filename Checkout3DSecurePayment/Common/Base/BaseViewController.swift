@@ -7,9 +7,14 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
+class BaseViewController<VM>: UIViewController, BindableType {
+  var viewModel: VM!
+  override func loadView() {
+    super.loadView()
     self.view.backgroundColor = DesignSystem.shared.colors.backgroundPrimary
+  }
+  
+  func bind() {
+    assertionFailure("Subclass must override")
   }
 }

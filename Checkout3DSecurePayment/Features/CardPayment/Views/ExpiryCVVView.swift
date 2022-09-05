@@ -8,12 +8,30 @@
 import UIKit
 
 final class ExpiryCVVView: UIView, InputViewValidatable {
+  func setToErrorState() {
+    expiryDateInputView.setToErrorState()
+    cvvInputField.setToErrorState()
+  }
+  
+  func setToNormalState() {
+    expiryDateInputView.setToNormalState()
+    cvvInputField.setToNormalState()
+  }
+  
+  func setToErrorState(_ errorMessage: String) {
+    expiryDateInputView.setToErrorState(errorMessage)
+    cvvInputField.setToErrorState(errorMessage)
+  }
+  
   var viewModel: InputViewDataProvidable
   
   init(with viewModel: InputViewDataProvidable) {
     self.viewModel = viewModel
     super.init(frame: .zero)
     buildUI()
+    (self.viewModel as? ExpiryCVVViewModel)?.updateCVVLengthListener = { [unowned self] length in
+      self.cvvViewModel.maxCharacterCount = length
+    }
   }
   
   required init?(coder: NSCoder) {
@@ -43,15 +61,19 @@ final class ExpiryCVVView: UIView, InputViewValidatable {
   }()
   
   private lazy var cvvInputField: InputViewValidatable = {
-    let inputView = InputView(with: CVVViewModel())
+    let inputView = InputView(with: self.cvvViewModel, isSecuredEntry: true)
     inputView.translatesAutoresizingMaskIntoConstraints = false
     return inputView
+  }()
+  
+  private lazy var cvvViewModel: CVVViewModel = {
+    CVVViewModel()
   }()
   
   lazy var container: UIStackView = {
     let stackView = UIStackView(arrangedSubviews: [expiryDateInputView, cvvInputField])
     stackView.axis = .horizontal
-    stackView.alignment = .fill
+    stackView.alignment = .top
     stackView.distribution = .fillEqually
     stackView.spacing = CGFloat(DesignSystem.shared.sizer.sm)
     stackView.translatesAutoresizingMaskIntoConstraints = false
