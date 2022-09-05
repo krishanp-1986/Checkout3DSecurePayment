@@ -12,7 +12,7 @@ struct PaymentRequestBody: Encodable {
   let expiryMonth: Int?
   let expiryYear: Int?
   let cvv: String?
-  let successUrl: String? 
+  let successUrl: String?
   let failureUrl: String?
   
   enum CodingKeys: String, CodingKey {

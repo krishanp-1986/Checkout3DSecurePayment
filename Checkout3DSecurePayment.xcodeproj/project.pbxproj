@@ -45,6 +45,15 @@
 		32A5931228C3381000627137 /* CardPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5931128C3381000627137 /* CardPayment.swift */; };
 		32D28F8D28C6221200A8E4AA /* PaymentComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F8C28C6221200A8E4AA /* PaymentComplete.swift */; };
 		32D28F8F28C6225300A8E4AA /* PaymentCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F8E28C6225300A8E4AA /* PaymentCompleteViewController.swift */; };
+		32D28F9228C62B9A00A8E4AA /* CardPaymentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9128C62B9A00A8E4AA /* CardPaymentViewModelTest.swift */; };
+		32D28F9528C63A6800A8E4AA /* TestURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9428C63A6800A8E4AA /* TestURLProtocol.swift */; };
+		32D28F9728C63A9F00A8E4AA /* NetworkAgentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9628C63A9F00A8E4AA /* NetworkAgentTest.swift */; };
+		32D28F9928C63BD400A8E4AA /* ServiceFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9828C63BD400A8E4AA /* ServiceFactoryTest.swift */; };
+		32D28F9B28C63C0800A8E4AA /* MockNetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9A28C63C0800A8E4AA /* MockNetworkAgent.swift */; };
+		32D28F9E28C63D0000A8E4AA /* CheckoutCardPaymentUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9D28C63D0000A8E4AA /* CheckoutCardPaymentUseCaseTest.swift */; };
+		32D28FA028C63E5200A8E4AA /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28F9F28C63E5200A8E4AA /* JsonUtils.swift */; };
+		32D28FA328C63E9B00A8E4AA /* TestResponse in Resources */ = {isa = PBXBuildFile; fileRef = 32D28FA228C63E9B00A8E4AA /* TestResponse */; };
+		32D28FA528C6401700A8E4AA /* CreditCardInputViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D28FA428C6401700A8E4AA /* CreditCardInputViewModelTest.swift */; };
 		32D998C828C393ED00082E8D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D998C728C393ED00082E8D /* Coordinator.swift */; };
 		32D998CA28C3940600082E8D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D998C928C3940600082E8D /* MainCoordinator.swift */; };
 		32D998CD28C3972100082E8D /* InputViewValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D998CC28C3972100082E8D /* InputViewValidatable.swift */; };
@@ -126,6 +135,15 @@
 		32A5931128C3381000627137 /* CardPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPayment.swift; sourceTree = "<group>"; };
 		32D28F8C28C6221200A8E4AA /* PaymentComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentComplete.swift; sourceTree = "<group>"; };
 		32D28F8E28C6225300A8E4AA /* PaymentCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCompleteViewController.swift; sourceTree = "<group>"; };
+		32D28F9128C62B9A00A8E4AA /* CardPaymentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPaymentViewModelTest.swift; sourceTree = "<group>"; };
+		32D28F9428C63A6800A8E4AA /* TestURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestURLProtocol.swift; sourceTree = "<group>"; };
+		32D28F9628C63A9F00A8E4AA /* NetworkAgentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgentTest.swift; sourceTree = "<group>"; };
+		32D28F9828C63BD400A8E4AA /* ServiceFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactoryTest.swift; sourceTree = "<group>"; };
+		32D28F9A28C63C0800A8E4AA /* MockNetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkAgent.swift; sourceTree = "<group>"; };
+		32D28F9D28C63D0000A8E4AA /* CheckoutCardPaymentUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCardPaymentUseCaseTest.swift; sourceTree = "<group>"; };
+		32D28F9F28C63E5200A8E4AA /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		32D28FA228C63E9B00A8E4AA /* TestResponse */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestResponse; sourceTree = "<group>"; };
+		32D28FA428C6401700A8E4AA /* CreditCardInputViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInputViewModelTest.swift; sourceTree = "<group>"; };
 		32D998C728C393ED00082E8D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		32D998C928C3940600082E8D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		32D998CC28C3972100082E8D /* InputViewValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewValidatable.swift; sourceTree = "<group>"; };
@@ -233,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3279F76D28C4803A00E6C3D5 /* CardUtilsTest.swift */,
+				32D28F9F28C63E5200A8E4AA /* JsonUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -309,6 +328,9 @@
 		32A592F628C3345600627137 /* Checkout3DSecurePaymentTests */ = {
 			isa = PBXGroup;
 			children = (
+				32D28FA228C63E9B00A8E4AA /* TestResponse */,
+				32D28F9328C63A5400A8E4AA /* Service */,
+				32D28F9028C62B7D00A8E4AA /* CardPayment */,
 				32DDD5BE28C5CE3B00B6985C /* Formatter */,
 				32DDD5B728C5C28800B6985C /* Validator */,
 				32DDD5B228C5B43600B6985C /* Extension */,
@@ -333,6 +355,35 @@
 				32D28F8E28C6225300A8E4AA /* PaymentCompleteViewController.swift */,
 			);
 			path = PaymentComplete;
+			sourceTree = "<group>";
+		};
+		32D28F9028C62B7D00A8E4AA /* CardPayment */ = {
+			isa = PBXGroup;
+			children = (
+				32D28F9C28C63CE300A8E4AA /* Usecase */,
+				32D28F9128C62B9A00A8E4AA /* CardPaymentViewModelTest.swift */,
+				32D28FA428C6401700A8E4AA /* CreditCardInputViewModelTest.swift */,
+			);
+			path = CardPayment;
+			sourceTree = "<group>";
+		};
+		32D28F9328C63A5400A8E4AA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				32D28F9428C63A6800A8E4AA /* TestURLProtocol.swift */,
+				32D28F9628C63A9F00A8E4AA /* NetworkAgentTest.swift */,
+				32D28F9828C63BD400A8E4AA /* ServiceFactoryTest.swift */,
+				32D28F9A28C63C0800A8E4AA /* MockNetworkAgent.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		32D28F9C28C63CE300A8E4AA /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				32D28F9D28C63D0000A8E4AA /* CheckoutCardPaymentUseCaseTest.swift */,
+			);
+			path = Usecase;
 			sourceTree = "<group>";
 		};
 		32D998C628C393DC00082E8D /* Coordinator */ = {
@@ -580,6 +631,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D28FA328C63E9B00A8E4AA /* TestResponse in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,13 +800,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D28F9B28C63C0800A8E4AA /* MockNetworkAgent.swift in Sources */,
 				32DDD5C028C5CE5400B6985C /* CreditCardNumberFormatterTest.swift in Sources */,
 				32A592F828C3345600627137 /* Checkout3DSecurePaymentTests.swift in Sources */,
+				32D28F9728C63A9F00A8E4AA /* NetworkAgentTest.swift in Sources */,
 				32DDD5B628C5B61900B6985C /* DateExtensionTests.swift in Sources */,
+				32D28FA528C6401700A8E4AA /* CreditCardInputViewModelTest.swift in Sources */,
+				32D28FA028C63E5200A8E4AA /* JsonUtils.swift in Sources */,
+				32D28F9528C63A6800A8E4AA /* TestURLProtocol.swift in Sources */,
+				32D28F9928C63BD400A8E4AA /* ServiceFactoryTest.swift in Sources */,
 				32DDD5B428C5B44D00B6985C /* StringExtensionTest.swift in Sources */,
 				32DDD5BB28C5C8E700B6985C /* ExpiryDateValidatorTest.swift in Sources */,
 				32DDD5B928C5C2CB00B6985C /* CreditCardValidatorTest.swift in Sources */,
+				32D28F9E28C63D0000A8E4AA /* CheckoutCardPaymentUseCaseTest.swift in Sources */,
 				32DDD5C228C5D07800B6985C /* ExpiryDateFormatterTest.swift in Sources */,
+				32D28F9228C62B9A00A8E4AA /* CardPaymentViewModelTest.swift in Sources */,
 				3279F76E28C4803A00E6C3D5 /* CardUtilsTest.swift in Sources */,
 				32DDD5BD28C5CCF400B6985C /* CVVValidatorTest.swift in Sources */,
 			);

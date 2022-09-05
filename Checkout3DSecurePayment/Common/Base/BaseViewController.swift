@@ -19,12 +19,13 @@ class BaseViewController<VM>: UIViewController, BindableType {
   }
   
   func displayBasicAlert(for error: Error) {
-    let alertViewController = UIAlertController(title: "Error",
-                                                message: error.localizedDescription,
-                                                preferredStyle: .alert)
+    let alertViewController = UIAlertController(
+      title: "Error",
+      message: error.localizedDescription,
+      preferredStyle: .alert
+    )
     let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
     alertViewController.addAction(okAction)
     self.present(alertViewController, animated: true, completion: nil)
   }
-  
 }
