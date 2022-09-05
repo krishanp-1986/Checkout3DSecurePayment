@@ -8,6 +8,7 @@
 import UIKit
 
 public final class TextInput: UITextField {
+  private var isLayoutSubViewCalled = false
   var textPadding = UIEdgeInsets(
     top: 0,
     left: 20,
@@ -26,7 +27,10 @@ public final class TextInput: UITextField {
   }
   public override func layoutSubviews() {
     super.layoutSubviews()
-    DesignSystem.shared.styles.textInput(self)
+    if !self.isLayoutSubViewCalled {
+      self.isLayoutSubViewCalled = true
+      DesignSystem.shared.styles.textInput(self)
+    }
   }
   
   func setToNormalState() {

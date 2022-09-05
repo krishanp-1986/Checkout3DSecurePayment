@@ -14,3 +14,10 @@
 "cvv_placeholder" = "•••";
 "pay" = "Pay";
 "accepted_cards" = "Accepted cards";
+"empty_credit_card_number" = "Please enter your credit card number";
+"invalid_credit_card_number" = "Please double-check the credit card number and try again.";
+"empty_expiry_date_error" = "Please enter the expiry date";
+"invalid_expiry_date_format" = "Please enter the card expiry date in YYYY/MM format";
+"old_expiry_date_format" = "Please double-check the expiry date and try again.";
+"empty_cvv_error" = "Please enter the CVV";
+"invalid_cvv_length_error" = "Please double-check the CVV and try again";

@@ -8,7 +8,14 @@
 import Foundation
 
 class CVVViewModel: InputViewModel {
-  override init(key: String = Constants.ApiKeys.cvv, placeHolder: String = L10n.cvvPlaceholder) {
-    super.init(key: key, placeHolder: placeHolder)
+  override var maxCharacterCount: Int? {
+    didSet {
+      guard let count = maxCharacterCount else { return }
+      let cvvValidator = self.validator as? CVVValidator
+      cvvValidator?.setCvvLength(count)
+    }
+  }
+  override init(key: String = Constants.ApiKeys.cvv, placeHolder: String = L10n.cvvPlaceholder, formatter: Formattable? = nil, validator: Validator? = CVVValidator()) {
+    super.init(key: key, placeHolder: placeHolder, validator: validator)
   }
 }

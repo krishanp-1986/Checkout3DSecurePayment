@@ -11,6 +11,8 @@ import UIKit
 struct CardPayment {
   static func build() -> UIViewController {
     let cardPaymentVC = CardPaymentViewController()
+    let cardPaymentViewModel = CardPaymentViewModel()
+    cardPaymentVC.bindViewModel(cardPaymentViewModel)
     return UINavigationController(rootViewController: cardPaymentVC)
   }
 }
